@@ -6,11 +6,13 @@ export default async function handler(request) {
   const url = new URL(request.url);
   
   // Extraer el path después de /proxy/24629/
-  const pathMatch = url.pathname.match(/\/proxy\/24629\/(.*)/);
-  const targetPath = pathMatch ? pathMatch[1] : '';
+  const pathMatch = url.pathname.match(/\/proxy\/24629\/?(.*)$/);
+  const targetPath = pathMatch && pathMatch[1] ? pathMatch[1] : '';
   
-  // Construir la URL de destino
-  const targetUrl = `http://june.hidencloud.com:24629/${targetPath}${url.search}`;
+  // Construir la URL de destino (sin la barra final si targetPath está vacío)
+  const targetUrl = targetPath 
+    ? `http://june.hidencloud.com:24629/${targetPath}${url.search}`
+    : `http://june.hidencloud.com:24629${url.search}`;
   
   try {
     // Hacer la petición al servidor HTTP original

@@ -1,0 +1,13 @@
+{
+  "name": "http-to-https-proxy",
+  "version": "1.0.0",
+  "description": "Proxy HTTPS para endpoints HTTP usando Vercel Edge Functions",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  }
+}
