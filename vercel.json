@@ -5,11 +5,19 @@
       "destination": "/api/proxy-25196"
     },
     {
+      "source": "/proxy/25196/",
+      "destination": "/api/proxy-25196"
+    },
+    {
       "source": "/proxy/25196/:path*",
       "destination": "/api/proxy-25196"
     },
     {
       "source": "/proxy/24629",
+      "destination": "/api/proxy-24629"
+    },
+    {
+      "source": "/proxy/24629/",
       "destination": "/api/proxy-24629"
     },
     {
